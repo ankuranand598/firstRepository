@@ -1,0 +1,12 @@
+var myTable;
+myTable = 13;
+console.log(myTable);
+console.log(2*myTable);
+console.log(3*myTable);
+console.log(4*myTable);
+console.log(5*myTable);
+console.log(6*myTable);
+console.log(7*myTable);
+console.log(8*myTable);
+console.log(9*myTable);
+console.log(10*myTable);
