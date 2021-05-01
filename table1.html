@@ -1,41 +1,42 @@
-<!DOCTYPE html>
 <html>
     <head>
         <script>
-            function generate_table()
-                { 
-                    var body = document.getElementsByTagName("body");
-                    var tbl = document.createElement("table");
-                    var tblBody = document.createElement("tbody");
-                    for(var i = 0; i<2; i++)
-                    {
-                       var row = document.createElement("tr");
-                       for(var j = 0; j < 2; j++)
-                      {
-                       var cell = document.createElement("td");
-                       var cellText = document.createTextNode(" cell in row"+i+", column "+j);
-                       cell.appendChild(cellText);
-                       row.appendchild(cell);
-                       }
-                      tblBody.appendChild(row);
-                    }
-        
-                 tbl.appendChild(tblBody);
-                  body.appendChild(tbl);
-                 tbl.setAttribute("border", "2");
-                }
-            </script>
-  
+            function generate_table() {
+  var body = document.getElementsByTagName("body")[0];
+  var tbl = document.createElement("table");
+  var tblBody = document.createElement("tbody");
+  for (var i = 0; i < 2; i++) {
+    var row = document.createElement("tr");
+
+    for (var j = 0; j < 2; j++) {
+      var cell = document.createElement("td");
+      var cellText = document.createTextNode("cell in row "+i+", column "+j);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+    }
+    tblBody.appendChild(row);
+  }
+
+  tbl.appendChild(tblBody);
+  body.appendChild(tbl);
+  tbl.setAttribute("border", "2");
+}
+        </script>
+
     </head>
     <body>
-         <input type="button" value="Generate a table." onclick="generate_table()">
-        <table border="2" id="tbl">
-            <tbody id="tblBody">
-             <tr id="cell"><td id="cellText">00</td><td cell.appendChild(cellText);>01</td></tr>
-             <tr id="cell"><td id="cellText">11</td><td cell.appendChild(cellText);>12</td></tr>
-             
-            </tbody> 
+        <input type="button" value="generate table." onclick="generate_table()">
+        <table border="2">
+          <tbody>
+                <tr>
+                     <td>cell in row 0, column 0</td>
+                     <td>cell in row 0, column 1</td>
+                </tr>
+                <tr>
+                     <td>cell in row 1, column 0</td>
+                     <td>cell in row 1, column 1</td>
+                </tr>
+            </tbody>
         </table>
-        
     </body>
 </html>
