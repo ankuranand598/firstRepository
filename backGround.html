@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function expenseManager()
+            {
+                var amt = document.getElementById(amount).value;
+                var income = document.getElementById(income).value;
+                var rent = document.getElementById(rent).value;
+                var bonus = document.getElementById(Bonus).value;
+                var foodExp = document.getElementById(Food).value;
+                Food.appendChild(foodExp);
+            }
+        </script>
+       
+    </head>
+    <body>
+        
+            <table>
+                <table border="1">
+                    <tr style="background-color: rgb(126, 117, 65);">
+                        <td style="width: 1500px;height: 50px;text-align: center;">Available Budget of this month.</td>
+                    </tr>
+                </table>
+               <table border="1">
+                <tr>
+                    <td style="width: 250px;height: 500px; background-color: rgb(83, 8, 83);"></td>
+                    <td style="width: 1000px;height: 500px; background-color: rgb(122, 131, 141);">
+                     Amount: <input type="text" id="amount" placeholder="Enter amount....">
+                     <label for="typeSelect()">choose type</label>
+                     <select name="money" id="typeSelect()">
+                         <option value="">please select</option>
+                       <option id="income" value="Income">income</option>
+                       <option id="rent" value="rent">rent</option>
+                       <option id="Bonus" value="Bonus">Bonus</option>
+                       <option id="Food" value="food exp">Food exp</option>
+                     </select>
+                     <br>
+                     <br>
+                     <input type="button" onclick="expenseManager()" value="calculate" style="background-color: rgb(168, 73, 73);">
+
+                    </td>
+                    <td style="width: 250px;height: 500px; background-color: rgb(83, 8, 83);"></td>
+                </tr>
+               </table>
+               <table border="1">
+                <tr>
+                    <td style="width: 1500px;height: 20px; background-color: rgb(78, 56, 56);"></td>
+                </tr>
+                 </table>
+            </table>
+        </table>
+    </body>
+</html>
