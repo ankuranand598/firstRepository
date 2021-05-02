@@ -1,36 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script>
+        <script type="text/javascript">
             function expenseManager()
             {
                 var amt = Number(document.getElementById("amount").value);
-                var income = document.getElementById("income").value;
-                var rent = document.getElementById("rent").value;
-                var Bonus = document.getElementById("Bonus").value;
-                var Food = document.getElementById("Food").value;
-                var strUser = e.value;
-                //Food.appendChild(foodExp);
-                amt = 0;
-                amt = amt + income;
-                amt.appendChild("amount");
-                if (amt == rent)
-                    amt = amt - rent;
-                    else if(amt == income)
-                    amt = amt + income;
-                    income.appendChild("amt");
-                     if(amt == Bonus)
-                    amt = amt + Bonus;
-                    console.log(amt)
-                     if(amt == Food)
-                    amt = amt - Food;
-                    console.log(amt)
-                   
-
-
-                
+                var money = document.getElementById("typeSelect").value;
+                disp(amt, money)
                 
             }
+            function disp(amt, money)
+            {
+                var div = document.getElementById("display").value;
+                div.appendChild(amt, money) ;
+            }
+            
         </script>
        
     </head>
@@ -46,17 +30,18 @@
                 <tr>
                     <td style="width: 250px;height: 500px; background-color: rgb(83, 8, 83);"></td>
                     <td style="width: 1000px;height: 500px; background-color: rgb(122, 131, 141);"> 
-                        <input type="button" onclick="expenseManager()" value="calculate" style="background-color: rgb(168, 73, 73);">
+                        
 
                      Amount: <input type="text" id="amount" placeholder="Enter amount....">
-                     <label for="typeSelect()">choose type</label>
-                     <select name="money" id="typeSelect()">
+                     <label>choose type</label>
+                     <select id="typeSelect">
                          <option value="">please select</option>
                          <option id="income" value="Income">income</option>
                          <option id="rent" value="rent">rent</option>
                          <option id="Bonus" value="Bonus">Bonus</option>
                          <option id="Food" value="Food">Food</option>
                      </select>
+                     <input type="button" onclick="expenseManager()" value="calculate" style="background-color: rgb(168, 73, 73);">
                      <br>
                      <br>
                     
@@ -68,6 +53,9 @@
                 <tr>
                     <td style="width: 1500px;height: 20px; background-color: rgb(78, 56, 56); text-align: right;">Powered By: Mr. Aman</td>
                 </tr>
+                <div id="display">
+
+                </div>
                  </table>
             </table>
         </table>
