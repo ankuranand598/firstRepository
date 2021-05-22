@@ -4,15 +4,20 @@
         <script type="text/javascript">
             function expenseManager()
             {
+                var tot = Number(document.getElementById("total").value);
                 var amt = Number(document.getElementById("amount").value);
-                var money = document.getElementById("typeSelect").value;
-                disp(amt, money)
+                var type = document.getElementById("typeSelect").value;
+                
+
+                disp(tot, amt, type);
                 
             }
-            function disp(amt, money)
+            function disp(tot, amt,type)
             {
-                var div = document.getElementById("display").value;
-                div.appendChild(amt, money) ;
+                var div =document.getElementById("res");
+                var left = tot - amt;
+                div.textContent = tot+"rs"+" "+amt+"rs"+" in"+" "+type+" ="+left+"rs left";
+                alert("done");
             }
             
         </script>
@@ -28,23 +33,26 @@
                 </table>
                <table border="1">
                 <tr>
-                    <td style="width: 250px;height: 500px; background-color: rgb(83, 8, 83);"></td>
+                    <td style="width: 250px;height: 500px; background-color: rgb(83, 8, 83);">
+                    </td>
                     <td style="width: 1000px;height: 500px; background-color: rgb(122, 131, 141);"> 
-                        
+                        total amount:<input type="text" id="total" placeholder="Enter amount....">
 
                      Amount: <input type="text" id="amount" placeholder="Enter amount....">
                      <label>choose type</label>
                      <select id="typeSelect">
-                         <option value="">please select</option>
-                         <option id="income" value="Income">income</option>
+                         <option >please select</option>
+                         <option id="travel">travel</option>
                          <option id="rent" value="rent">rent</option>
-                         <option id="Bonus" value="Bonus">Bonus</option>
+                         <option id="medicines" value="medicine">Medicine</option>
                          <option id="Food" value="Food">Food</option>
                      </select>
-                     <input type="button" onclick="expenseManager()" value="calculate" style="background-color: rgb(168, 73, 73);">
+                     <button type="button" onclick="expenseManager()" style="background-color: rgb(168, 73, 73);">calculate</button>
                      <br>
                      <br>
-                    
+                    <div id ="res">
+
+                    </div>
                     </td>
                     <td style="width: 250px;height: 500px; background-color: rgb(83, 8, 83);"></td>
                 </tr>
